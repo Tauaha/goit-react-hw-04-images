@@ -23,10 +23,10 @@ export default function App () {
 
   useEffect(()=> {
     if (!query) return;
+   
     setIsLoading(true)
     pixabayApi.fetchImages( query, page ).then((data) => 
-      setimages((prev)=>([...prev, ...data.hits])),
-    setIsLoading(false))
+      setimages((prev)=>([...prev, ...data.hits])))
 .catch(error => {setError(error)}).finally(() => {
   setIsLoading(false)
   				})
