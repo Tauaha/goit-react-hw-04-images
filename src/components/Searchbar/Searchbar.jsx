@@ -7,10 +7,10 @@ import Styles from 'components/Searchbar/Searchbar.module.css'
 function Searchbar ({onSubmitForm}) {
   const [imageName, setImageName] = useState('')
    
-    const  handleNameChange = event => {
+  const  handleNameChange = event => {
         setImageName(event.currentTarget.value.toLowerCase())};
     
-     const handleSubmit = event => {
+  const handleSubmit = event => {
         event.preventDefault();
         onSubmitForm(imageName);
         setImageName('');
@@ -28,13 +28,12 @@ return(
         autoFocus
         placeholder="Search images and photos"
         name="imageName"
-          value={imageName}
-          onChange={handleNameChange}/>
+        value={imageName}
+        onChange={handleNameChange}/>
     </form>
     </header>
-)
-    
-}
+)}
+
 Searchbar.propTypes ={
   onSubmitForm: PropTypes.func.isRequired
  }        
